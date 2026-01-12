@@ -11,10 +11,41 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+}
+
+.input-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 8px 4px;
+    width: 250px;
+}
+
+#input:focus {
+    outline: none;
+    border-bottom-color: #007bff;
+}
+
 .add-btn {
-    background-color: gray;
+    background-color: rgb(56, 56, 56);
     border: none;
     padding: 0px 8px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 28px;
+    border-radius: 10px;
+    transition-duration: 400ms;
+    color: white;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
 }
