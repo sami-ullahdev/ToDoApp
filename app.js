@@ -3,28 +3,37 @@ console.log("Js Running ==>");
 let inputText = document.getElementById("input");
 let addbtn = document.querySelector(".add-btn");
 let todolist = document.getElementsByTagName("ul")[0];
-let delAllBtn = document.querySelector(".del-btn");
+let delAllBtn = document.querySelector(".del-All-btn");
 let delBtn = document.querySelector(".fa-trash-can");
 
 addbtn.addEventListener("click", addhandler);
 delAllBtn.addEventListener("click", delAllHandler);
-delBtn.addEventListener("click", delHandler);
+
+// delBtn.addEventListener("click", delHandler);
 
 function addhandler() {
-    if (inputText.Value.trim() == "") {
-        sweetAlert("error", "sad", "Please Enter a Value")
+    if (inputText.value.trim() == "") {
+        sweetAlert("error", "sad", "Please Enter a Value");
+        return;
     };
 
     todolist.innerHTML += `<li>
-    ${inputText.value}
-        <div class="icon">
-            <i class="fa-solid fa-trash-can"></i>
-            <i class="fa-solid fa-pen-to-square"></i>
-        </div>
-    </li>`
+        ${inputText.value}
+            <div class="icon">
+                <i onclick="delHandler(event)" class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+        </li>`;
 
     inputText.value = "";
 }
+
+function delHandler(event){
+    event.target.parentElement.parentElement.remove();
+};
+
+function delAllHandler() {
+};
 
 function sweetAlert(icon, title, message) {
     Swal.fire({
