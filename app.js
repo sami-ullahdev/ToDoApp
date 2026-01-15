@@ -32,7 +32,10 @@ function delHandler(event){
     event.target.parentElement.parentElement.remove();
 };
 
-function delAllHandler() {
+function delAllHandler(event) {
+    console.log("main Chala ==>");
+    let todoArr = todolist.children;
+    // event.target.parentElement.parentElement.parentElement.remove();
 };
 
 function sweetAlert(icon, title, message) {
